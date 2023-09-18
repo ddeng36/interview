@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button>click</button>
+    </div>
+
+    <script>
+      const div = document.querySelector("div");
+      const button = document.querySelector("button");
+      
+      div.addEventListener('click',()=>{console.log('capture div')},true)
+      button.addEventListener('click',()=>{console.log('captrue btn')},true);
+      button.addEventListener('click',()=>{console.log('bubble btn'),false})
+      div.addEventListener('click',()=>{console.log('bubble div')},false)
+
+    //禁用冒泡
+    //只会触发div的捕获事件，内层的冒泡事件不会触发   
+    //div.addEventListener('click',(event)=>{event.stopPropagation()},true)
+    </script>
+  </body>
+</html>
