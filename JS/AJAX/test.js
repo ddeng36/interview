@@ -1,6 +1,6 @@
 //node环境没有xhr
 
-//将jax封装成Promise
+//将ajax封装成Promise
 const ajax = function (method, url,data) {
     //返回一个Promise对象
     return new Promise(
