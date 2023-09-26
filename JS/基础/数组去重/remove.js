@@ -6,3 +6,5 @@ const removeDuplicate1 = function(arr){
 }
 console.log("Set:")
 console.log(removeDuplicate1(arr))
+
+//方法二：Map
