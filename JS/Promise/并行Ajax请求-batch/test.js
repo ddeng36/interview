@@ -33,7 +33,5 @@ async function sendConcurrentRequest(reqArray){
             console.log('err');
         }
     }
-
-
 }
 sendConcurrentRequest(requestArray)

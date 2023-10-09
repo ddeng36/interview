@@ -12,3 +12,9 @@ const log = debounce(console.log, 1000)
 log("hello")
 log("world")
 setTimeout(()=>log("111"), 200)
+
+
+
+
+
+

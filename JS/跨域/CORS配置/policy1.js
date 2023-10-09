@@ -13,7 +13,15 @@ app.use((req, res, next) => {
 
 // 处理请求
 app.get("/data", (req, res) => {
-  res.json({ message: "Hello from the server 3001!" });
+    //fetch 3000 and return msg from 3000
+  fetch("http://localhost:3000/data")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      res.json({ message: data.message });
+    });
+
+  // res.json({ message: "Hello from the server 3001!" });
 });
 
 app.listen(3001, () => {

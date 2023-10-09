@@ -5,13 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Counter from './CostomHook/Counter';
 import Ref from './Ref/Ref';
+import Transition from './Transition/Transition';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Counter/> */}
-    <Ref/>
+    {/* <Ref/> */}
+    <Transition></Transition>
   </React.StrictMode>
 );
 
