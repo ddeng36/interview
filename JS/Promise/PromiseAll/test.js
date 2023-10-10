@@ -22,3 +22,4 @@ function promiseAll(arr) {
 promiseAll(promiseArr).then((res)=>{
     console.log(res);
 })
+
