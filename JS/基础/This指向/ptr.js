@@ -12,15 +12,17 @@ let print = ()=>{
 // => window
 //在全局中调用
 
-let f1 = function(){
-    this.f2 = function(){
-        return this;
+let f1 = function(num){
+    this.num = num
+    this.f2 = function(x){
+        this.num +=x
+        return this.num;
     }
     this.f3 = ()=>{
         return this;
     }
 }
-// console.log(new f1().f2())
+console.log(new f1(1).f2(2))
 // => f1
 // console.log(new f1().f3())
 // => f1

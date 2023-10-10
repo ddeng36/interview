@@ -33,25 +33,32 @@ const selectSort = function (arr) {
 // console.log(selectSort(arr))
 
 const quickSort = function (arr) {
-    const len = arr.length;
-    if(len <= 1){
-        return arr;
+  const len = arr.length;
+  if (len <= 1) {
+    return arr;
+  }
+  const leftArr = [];
+  const rightArr = [];
+  const pivot = Math.ceil(len / 2);
+  const pivotNum = arr[pivot];
+  for (const num of arr) {
+    if (num < pivotNum) {
+      leftArr.push(num);
+    } else if (num == pivotNum) {
+      continue;
+    } else {
+      rightArr.push(num);
     }
-    const leftArr = [];
-    const rightArr = [];
-    const pivot = Math.ceil(len/2);
-    const pivotNum = arr[pivot];
-    for(const num of arr){
-        if(num < pivotNum){
-            leftArr.push(num);
-        }else if(num == pivotNum){
-            continue;
-        }else{
-            rightArr.push(num);
-        }
-    }
-    const leftSortedArr = quickSort(leftArr);
-    const rightSortedArr = quickSort(rightArr);
-    return [...leftSortedArr,pivotNum,...rightSortedArr];
+  }
+  const leftSortedArr = quickSort(leftArr);
+  const rightSortedArr = quickSort(rightArr);
+  return [...leftSortedArr, pivotNum, ...rightSortedArr];
 };
-console.log(quickSort(arr));
+// console.log(quickSort(arr));
+
+map = new Map();
+map.set(1,1)
+map.set(2,2)
+for(let a of map){
+  console.log(a)
+}

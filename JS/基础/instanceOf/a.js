@@ -15,4 +15,3 @@ function customInstanceOf(obj,constructor){
 
 console.log(customInstanceOf(obj,Object))
 console.log(customInstanceOf(obj,Array))
-
