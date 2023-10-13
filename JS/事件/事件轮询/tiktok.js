@@ -13,7 +13,7 @@ async function async1() {
   setTimeout(function () {
     console.log("setTimeout");
   }, 0);
-  
+  //await async()有区别吗,把15行之后的全部加入微队列
   async1();
   
   new Promise(function (resolve) {
