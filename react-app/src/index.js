@@ -1,19 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Counter from './CostomHook/Counter';
-import Ref from './Ref/Ref';
-import Transition from './Transition/Transition';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import Counter from "./CostomHook/Counter";
+import Ref from "./Ref/Ref";
+import Transition from "./Transition/Transition";
+import File from "./文件分片/File";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     {/* <App /> */}
     {/* <Counter/> */}
     {/* <Ref/> */}
-    <Transition></Transition>
+    {/* <Transition></Transition> */}
+    <File></File>
   </React.StrictMode>
 );
 
