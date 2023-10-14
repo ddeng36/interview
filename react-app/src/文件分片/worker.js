@@ -1,11 +1,10 @@
 // console.log(1);
-import SparkMD5 from './spark-md5.min.js'
+// import SparkMD5 from "./spark-md5.min.js";
 function createChunk(file, idx, chunkSize) {
   return new Promise((resolve, reject) => {
     const start = idx * chunkSize;
     const end = start + chunkSize >= file.size ? file.size : start + chunkSize;
-    
-    const spark = new SparkMD5.ArrayBuffer();
+    // const spark = new SparkMD5.ArrayBuffer();
     const reader = new FileReader();
     reader.readAsArrayBuffer(file.slice(start, end));
     reader.onload = (e) => {
