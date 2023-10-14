@@ -1,5 +1,5 @@
 import cutFile from "./cutFile.js";
-import { request } from "./request.js";
+import { batchRequest } from "./request.js";
 
 //  向input添加事件
 const input = document.querySelector("input[type=file]");
@@ -18,6 +18,7 @@ export async function fileChange(e) {
   const file = e.target.files[0];
   // 执行cutFile函数，将文件切割成多个chunk，得到每片文件的md5值和索引
   const chunks = await cutFile(file);
-  const result = await request(chunks, file);
   console.log(chunks);
+  // 调用batchRequest函数，将chunks中的每个chunk上传到服务器
+  await batchRequest(chunks, file, 2);
 }
