@@ -1,6 +1,6 @@
 import React from "react";
 import Worker from "web-worker";
-// import SparkMD5 from "spark-md5";
+import SparkMD5 from "spark-md5";
 //1024bit = 1kb,1024kb = 1mb
 const CHUNK_SIZE = 1024 * 1024 * 5;
 const THREAD_COUNT = navigator.hardwareConcurrency || 4;
@@ -21,13 +21,14 @@ function cutFile(file) {
       const worker = new Worker(url, {
         type: "module",
       });
-      worker.postMessage({ file, CHUNK_SIZE, startIdx, endIdx });
+      worker.postMessage({ file, CHUNK_SIZE, startIdx, endIdx});
       worker.onmessage = (e) => {
         for (let i = startIdx; i < endIdx; i++) {
           result[i] = e.data[i - startIdx];
         }
         worker.terminate();
         finishCount++;
+        console.log(result);
         if (finishCount === THREAD_COUNT) {
           resolve(result);
         }
@@ -46,6 +47,10 @@ const File = () => {
       body: formData,
     });
     const chunks = await cutFile(file);
+    fetch("http://localhost:3001/md5", {
+    method: "POST",
+    body: JSON.stringify(chunks),
+  })
     console.log(chunks);
   }
 

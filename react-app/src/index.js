@@ -14,7 +14,7 @@ root.render(
     {/* <Counter/> */}
     {/* <Ref/> */}
     {/* <Transition></Transition> */}
-    <File></File>
+    {/* <File></File> */}
   </React.StrictMode>
 );
 

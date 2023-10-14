@@ -42,6 +42,9 @@ app.post("/data", upload.single("file"), (req, res) => {
   }
 });
 
+app.post("/md5",(req,res)=>{
+  console.log(req.body)
+})
 
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
