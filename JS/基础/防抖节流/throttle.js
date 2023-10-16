@@ -1,17 +1,24 @@
-function throttle(fn,time){
-    let timer = null;
-    return function(...args){
+/**
+ * @param {Function} fn
+ * @param {number} t
+ * @return {Function}
+ */
+var throttle = function(fn, t) {
+    let timer;
+    let lastCallTime;
+	return function(...args) {
         if(timer){
-            return;
+            clearTimeout(timer);
         }
-        timer = setTimeout(()=>{
+		timer = setTimeout(()=>{
             fn(...args);
-            timer = null
-        },time)
-    }
-}
+            lastCallTime = Date.now()
+        },lastCallTime? t - (Date.now() - lastCallTime):0)
+	}
+};
 
-const log2 = throttle(console.log,1000)
-log2("hi");
-log2("throttle");
-setTimeout(()=>log2("ssss"),1000)
+/**
+ * const throttled = throttle(console.log, 100);
+ * throttled("log"); // logged immediately.
+ * throttled("log"); // logged at t=100ms.
+ */
