@@ -6,7 +6,6 @@ import reportWebVitals from "./reportWebVitals";
 import Counter from "./CostomHook/Counter";
 import Ref from "./Ref/Ref";
 import Transition from "./Transition/Transition";
-import File from "./文件分片/File";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -14,7 +13,7 @@ root.render(
     {/* <Counter/> */}
     {/* <Ref/> */}
     {/* <Transition></Transition> */}
-    <File></File>
+    {console.log(<Ref />)}
   </React.StrictMode>
 );
 

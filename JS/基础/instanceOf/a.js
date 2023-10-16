@@ -1,5 +1,7 @@
+
 const Person = function () {};
-obj = new Person();
+class Alice extends Person {}
+alice = new Alice();
 function customInstanceOf(obj, constructor) {
   let objProto = Object.getPrototypeOf(obj);
   while (objProto !== null) {
@@ -11,7 +13,4 @@ function customInstanceOf(obj, constructor) {
   return false;
 }
 
-console.log(customInstanceOf(obj, Object));
-console.log(customInstanceOf(obj, Array));
-console.log(Array.constructor);
-console.log(Array.prototype);
+console.log(customInstanceOf(alice, Object));
