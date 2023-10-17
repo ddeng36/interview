@@ -13,4 +13,12 @@ function customInstanceOf(obj, constructor) {
   return false;
 }
 
-console.log(customInstanceOf(alice, Object));
+// console.log(customInstanceOf(alice, Object));
+
+
+// 这两种方法为查找隐式原型，new出来的实例有隐式原型，但是类没有
+// 类的原型是类的prototype
+// 他们都指向构造器
+console.log(Object.getPrototypeOf(alice) === Alice.prototype)
+console.log(alice.__proto__ === Alice.prototype)
+console.log(Object.getPrototypeOf(alice).prototype === Alice.prototype)
