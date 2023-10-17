@@ -7,14 +7,14 @@ const MyPromise = function(fn){
   this.value = undefined;
   this.reason = undefined;
 
-  this.resolve = function(value){
+  const resolve = (value)=>{
     if(this.status === PENDING){
       this.status = FULFILLED;
       this.value = value;
     }
   }
 
-  this.reject = function(reason){
+  const reject = (reason)=>{
     if(this.status === PENDING){
       this.status = REJECTED;
       this.reason = reason;
@@ -22,17 +22,38 @@ const MyPromise = function(fn){
   }
 
   try{
-    fn(this.resolve, this.reject);
+    fn(resolve, reject);
   }catch(e){
-    this.reject(e);
+    reject(e);
   }
 }
+MyPromise.prototype.then = function(onFullfilled,onRejected){
+  var realOnFullfilled = onFullfilled;
+  if(typeof onFullfilled !== 'function'){
+    realOnFullfilled = (value)=>value;
+  }
+  var realOnRejected = onRejected;
+  if(typeof onRejected !== 'function'){
+    realOnRejected = (reason)=>{throw reason};
+  }
+  if(this.status === FULFILLED){
+    realOnFullfilled(this.value);
+  }
+  if(this.status === REJECTED){
+    realOnRejected(this.reason);
+  }
 
+}
 const mp = new MyPromise((resolve, reject)=>{
-  setTimeout(()=>{
     resolve(1)
-    console.log(mp.status + mp.value)
-  }, 1000)
 })
 
-setTimeout(() => { console.log(mp) }, 2000)
+async function test(){
+   await new Promise((resolve) => {
+    setTimeout(()=>{
+      console.log(mp);
+      resolve();
+    }, 100)
+  });
+}
+test()
