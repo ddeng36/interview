@@ -4,7 +4,9 @@ function debounce(fn, time){
         if(timer){
             clearTimeout(timer);
         }
-        timer = setTimeout(()=>{fn(...args)}, time)
+        timer = setTimeout(()=>{
+            fn(...args)
+        }, time)
     }
 }
 
