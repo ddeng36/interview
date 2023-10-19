@@ -21,7 +21,7 @@ const deepCopy1 = function(oringinal){
 }
 console.log("JSON:")
 console.log(deepCopy1(oringinal));
-
+//如果数组里面有对象怎么办，如果是函数怎么办，如果是正则怎么办，如果是Set怎么办，如果是Map怎么办，如果是Symbol怎么办，如果是undefined怎么办，如果是循环引用怎么办
 // 方法二：递归
 const deepCopy2 = function(oringinal){
     let newData = {}

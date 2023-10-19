@@ -1,11 +1,11 @@
 
 const calculator= function(val){
     this.val = val
-    this.f = function(x){
+    this.f = (x)=>{
         this.val += x; 
         return this;
     }
-    this.r = function(){
+    this.r = ()=>{
         return this.val
     }
 }

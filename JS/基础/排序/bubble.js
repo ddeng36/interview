@@ -54,11 +54,4 @@ const quickSort = function (arr) {
   const rightSortedArr = quickSort(rightArr);
   return [...leftSortedArr, pivotNum, ...rightSortedArr];
 };
-// console.log(quickSort(arr));
-
-map = new Map();
-map.set(1,1)
-map.set(2,2)
-for(let a of map){
-  console.log(a)
-}
+console.log(quickSort(arr));
