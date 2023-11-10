@@ -1,4 +1,5 @@
 // 适配器模式
+// 优点：将不兼容的接口转换为可兼容的接口，让原本由于接口不兼容而不能一起工作的类可以一起工作
 class OldSystem {
     OldRequest() {
         return 'old system';
