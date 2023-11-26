@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="https://unpkg.com/san@latest"></script>
+
+    <script>
+      var Card = san.defineComponent({
+        template: `
+                <div class = "card-wrapper"
+                  on-mouseenter="changeOverlay"
+                  on-mouseleave="changeOverlay"
+                >
+                  <img class = "card-content" src={{src}}/>
+                  <div 
+                    class = "card-overlay"
+                  >
+                  <div
+                    class = "button"
+                    s-if = "showPreview"
+                  >
+                  预览
+                  </div>
+                  <div
+                    class = "button"
+                    s-if = "showDownload"
+                  >
+                  下载
+                  </div>
+                  </div>
+                </div>
+        `,
+        initData: function () {
+          return {
+            showOverlay: false,
+            showPreview: true,
+            showDownload: true,
+          };
+        },
+        changeOverlay: function () {
+          this.data.set("showOverlay", !this.data.get("showOverlay"));
+        },
+      });
+      var MyApp = san.defineComponent({
+        template: `
+        <div>
+                <div class = "middle">
+                  <card s-for="item in showList" src="{{item.src}} "/>
+                  </div>
+                  <button on-click="change">
+                    change
+                  </button>
+        </div>
+        `,
+        components: {
+          card: Card,
+        },
+        attached: function () {
+          this.data.set(
+            "showList",
+            this.data.get("imgData").slice(0, this.data.get("showCount"))
+          );
+        },
+        change: function () {
+          const showCount = this.data.get("showCount");
+          const len = this.data.get("imgData").length;
+          this.data.set("showCount", showCount + 4 > len ? 4 : showCount + 4);
+          this.data.set(
+            "showList",
+            this.data
+              .get("imgData")
+              .slice(this.data.get("showCount") - 4, this.data.get("showCount"))
+          );
+        },
+        initData: function () {
+          return {
+            showCount: 4,
+            showList: [],
+            imgData: [
+              {
+                name: 0,
+                src: "https://wechatapppro-1252524126.cdn.xiaoeknow.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lavwhlv60qz4.jpeg?imageMogr2/format/webp%7CimageMogr2/ignore-error/1",
+              },
+              {
+                name: 1,
+                src: "https://wechatapppro-1252524126.cdn.xiaoeknow.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lavwhlv60qz4.jpeg?imageMogr2/format/webp%7CimageMogr2/ignore-error/1",
+              },
+              {
+                name: 2,
+                src: "https://wechatapppro-1252524126.cdn.xiaoeknow.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lavwhlv60qz4.jpeg?imageMogr2/format/webp%7CimageMogr2/ignore-error/1",
+              },
+              {
+                name: 3,
+                src: "https://wechatapppro-1252524126.cdn.xiaoeknow.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lavwhlv60qz4.jpeg?imageMogr2/format/webp%7CimageMogr2/ignore-error/1",
+              },
+              {
+                name: 4,
+                src: "http://wechatapppro-1252524126.file.myqcloud.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lawmj5p6046c.png",
+              },
+              {
+                name: 5,
+                src: "https://wechatapppro-1252524126.cdn.xiaoeknow.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lavwhlv60qz4.jpeg?imageMogr2/format/webp%7CimageMogr2/ignore-error/1",
+              },
+              {
+                name: 6,
+                src: "http://wechatapppro-1252524126.file.myqcloud.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lawmj5p6046c.png",
+              },
+              {
+                name: 7,
+                src: "https://wechatapppro-1252524126.cdn.xiaoeknow.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lavwhlv60qz4.jpeg?imageMogr2/format/webp%7CimageMogr2/ignore-error/1",
+              },
+              {
+                name: 8,
+                src: "http://wechatapppro-1252524126.file.myqcloud.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lawmj5p6046c.png",
+              },
+              {
+                name: 9,
+                src: "https://wechatapppro-1252524126.cdn.xiaoeknow.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lavwhlv60qz4.jpeg?imageMogr2/format/webp%7CimageMogr2/ignore-error/1",
+              },
+              {
+                name: 10,
+                src: "http://wechatapppro-1252524126.file.myqcloud.com/appjiz2zqrn2142/image/b_u_622f2474a891b_tuQ1ZmhR/lawmj5p6046c.png",
+              },
+            ],
+          };
+        },
+      });
+      var myApp = new MyApp();
+      myApp.attach(document.body);
+    </script>
+
+    <style>
+      .middle {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 500px;
+        height: 500px;
+        background: #000;
+        overflow: hidden;
+      }
+      .card-wrapper {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+      }
+      .card-content {
+        width: 100%;
+        height: 100%;
+      }
+      .card-overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+      .card-overlay:hover {
+        opacity: 1;
+      }
+      .button {
+        width: 50px;
+        height: 20px;
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        line-height: 20px;
+      }
+    </style>
+  </body>
+</html>
