@@ -3,10 +3,10 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+    <div className="App" onClick={()=>console.log(1)}>
+      <header className="App-header" onClick={()=>console.log(2)}>
+        <img src={logo} className="App-logo" alt="logo" onClick={()=>console.log(3)}/>
+        <p onClick={()=>console.log(4)}>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
