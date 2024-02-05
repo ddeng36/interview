@@ -4,7 +4,16 @@ const removeDuplicate1 = function(arr){
     return Array.from(new Set(arr))
     //return [...new Set(arr)]
 }
-console.log("Set:")
-console.log(removeDuplicate1(arr))
+console.log("Set:" + removeDuplicate1(arr))
 
-//方法二：Map
+//方法二：reduce
+const removeDuplicate2 = function(arr) {
+    return arr.reduce((pre, cur)=>{
+        if(!pre.includes(cur)){
+            pre.push(cur)
+        }
+        return pre;
+    },[])
+}
+console.log("reduce:" + removeDuplicate2(arr))
+
