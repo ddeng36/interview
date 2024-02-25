@@ -14,9 +14,9 @@ public class AbstractImplement {
 
     interface Interface {
         // 接口无法定义方法的实现
-        public void abstractMethod(){
-            System.out.println("This is an abstract method");
-        };
+        // public void abstractMethod(){
+        //     System.out.println("This is an abstract method");
+        // };
     }
 
 }
