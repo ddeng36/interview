@@ -5,6 +5,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class Test {
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         // 四种获取Class对象的方法
         // 1.通过类名.class
