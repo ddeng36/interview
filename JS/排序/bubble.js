@@ -1,5 +1,8 @@
 const arr = [1, 3, 9, 7, 6, 4, 2, 8, 5];
 
+// 冒泡排序
+// Time complexity: O(n^2)
+// Space complexity: O(1)
 const bubbleSort = function (arr) {
   const len = arr.length;
   for (let i = 0; i < len; i++) {
@@ -15,6 +18,9 @@ const bubbleSort = function (arr) {
 };
 // console.log(bubble(arr))
 
+// 选择排序
+// Time complexity: O(n^2)
+// Space complexity: O(1)
 const selectSort = function (arr) {
   const len = arr.length;
   for (let i = 0; i < len; i++) {
@@ -32,6 +38,9 @@ const selectSort = function (arr) {
 };
 // console.log(selectSort(arr))
 
+// 快速排序
+// Time complexity: O(nlogn)
+// Space complexity: O(logn)
 const quickSort = function (arr) {
   const len = arr.length;
   if (len <= 1) {
@@ -55,3 +64,4 @@ const quickSort = function (arr) {
   return [...leftSortedArr, pivotNum, ...rightSortedArr];
 };
 console.log(quickSort(arr));
+
