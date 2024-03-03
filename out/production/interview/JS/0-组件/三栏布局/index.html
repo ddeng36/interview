@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="father">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+    <style>
+      .father {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+      }
+      .left {
+        width: 200px;
+        height: 100%;
+        background: blue;
+      }
+      .center {
+        flex: 1;
+        height: 100%;
+        background: green;
+      }
+      .right {
+        width: 200px;
+        height: 100%;
+        background: red;
+      }
+    </style>
+    <div id="center" class="column">#center</div>
+    <div id="left" class="column">#left</div>
+    <div id="right" class="column">#right</div>
+    <style>
+#container{
+      padding: 0 200px;
+      overflow: hidden;
+    }
+    .column{
+      height: 200px;
+      float: left;
+      position: relative;
+    }
+    #left{
+      width: 200px;
+      margin-left: -100%;
+      left: -200px;
+      background-color: aqua;
+    }
+    #right{
+      width: 200px;
+      margin-left: -200px;
+      right: -200px;
+      background-color: wheat;
+    }
+    #center{
+      width: 100%;
+      background-color: tomato;
+    }
+    
+    
+    </style>
+    
+  </body>
+</html>

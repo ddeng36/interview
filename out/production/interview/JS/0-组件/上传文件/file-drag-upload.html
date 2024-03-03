@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 拖拽区 -->
+    <div class="container"></div>
+    <style>
+      .container {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+      }
+    </style>
+    <script>
+      // 给div注册事件
+      const div = document.querySelector(".container");
+      div.ondragenter = (e) => {
+        //默认div不支持文件拖拽，要阻止默认事件
+        e.preventDefault();
+      };
+      div.ondragover = (e) => {
+        e.preventDefault();
+      };
+      div.ondrop = (e) => {
+        e.preventDefault();
+        // 拿到每一个文件或文件夹对象
+        for (item of e.dataTransfer.items) {
+          // console.log(item)
+          // 拿到entry,DirectoryEntry 或 FileEntry
+          const entry = item.webkitGetAsEntry();
+          // console.log(entry);
+          if (entry.isDirectory) {
+            const reader = entry.createReader();
+            reader.readEntries((entries) => {
+              console.log(entries);
+            });
+          } else {
+            // 这里的file需要传入回掉函数
+            entry.file((file) => {
+              //XHR 的progress是可以监听上传进度的
+              //XHR 的abort是可以取消上传的
+              console.log(file);
+            });
+          }
+        }
+      };
+    </script>
+
+    <!-- multiple 上传多个文件 -->
+    <!-- directory 上传文件夹，兼容 -->
+    <input
+      type="file"
+      multiple
+      webkitdirectory
+      mozdirectory
+      msdirectory
+      odirectory
+      directory
+    />
+    <!-- 在console中输入$0.files拿到文件对象 -->
+  </body>
+</html>

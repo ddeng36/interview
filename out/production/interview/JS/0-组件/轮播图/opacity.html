@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="div">
+      <img class="img" src="./1.jpg" alt="" />
+      <img class="img" src="./2.jpg" alt="" />
+      <img class="img" src="./3.jpg" alt="" />
+    </div>
+    <style>
+      .img {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        opacity: 0;
+        transition: all 1s ease-in;
+      }
+      .div {
+        display: flex;
+        position: relative;
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+    <script>
+        const img = document.querySelectorAll(".img");
+        let index = 0;
+        setInterval(() => {
+            index++;
+            if (index > img.length - 1) {
+            index = 0;
+            }
+            img.forEach((item) => {
+            item.style.opacity = 0;
+            });
+            img[index].style.opacity = 1;
+        }, 1000);
+    </script>
+  </body>
+</html>
