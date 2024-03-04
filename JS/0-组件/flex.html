@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father">
+        <div class="left">
+            <div class="child">a</div>
+            <div class="child">b</div>
+        </div>
+        <div class="right">
+            <div class="child">c</div>
+            <div class="child">d</div>
+        </div>
+    </div>
+    <style>
+        .father {
+            width: 400px;
+            height: 200px;
+            background-color: grey;
+            display: flex;
+        }
+        .father .left {
+            width: 200px;
+            display: flex;
+            flex: 1;
+            background-color: blue ;
+        }
+        .father .left .child {
+            width: 100px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .father .right {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            width: 200px;
+            background-color: orange;
+        }
+        .father .right .child {
+            width: 200px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</body>
+</html>

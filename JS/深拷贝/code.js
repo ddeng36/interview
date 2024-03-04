@@ -25,6 +25,7 @@ console.log(deepCopy1(oringinal));
 // 如果是正则怎么办，如果是Set怎么办，如果是Map怎么办，
 // 如果是Symbol怎么办，如果是undefined怎么办，
 // 如果是循环引用怎么办
+
 // 方法二：递归
 const deepCopy2 = function(oringinal){
     let newData = {}
@@ -56,5 +57,11 @@ const deepCopy2 = function(oringinal){
     return newData;
 }
 console.log("递归：")
-console.log(deepCopy2(oringinal))
+console.log(deepCopy2(oringinal.f))
+console.log([1,2,3])
 
+// const a = () => {
+//     console.log("a")
+// }
+// const b = deepCopy2(a)
+// b()
