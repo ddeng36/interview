@@ -1,0 +1,84 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "JVA.ACM.Test",
+            "projectName": "interview_952f5f04"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "JVA.代理.静态代理.Main",
+            "projectName": "interview_952f5f04"
+        },
+        {
+            "type": "java",
+            "name": "Test(1)",
+            "request": "launch",
+            "mainClass": "JVA.反射.Test",
+            "projectName": "interview_952f5f04"
+        },
+        {
+            "type": "java",
+            "name": "AbstractImplement",
+            "request": "launch",
+            "mainClass": "JVA.基础.AbstractImplement",
+            "projectName": "interview_952f5f04"
+        },
+        {
+            "type": "java",
+            "name": "Casting",
+            "request": "launch",
+            "mainClass": "JVA.基础.Casting",
+            "projectName": "interview_952f5f04"
+        },
+        {
+            "type": "java",
+            "name": "Reference",
+            "request": "launch",
+            "mainClass": "JVA.基础.Reference",
+            "projectName": "interview_952f5f04"
+        },
+        {
+            "type": "java",
+            "name": "DeadLock",
+            "request": "launch",
+            "mainClass": "JVA.多线程.DeadLock",
+            "projectName": "interview_952f5f04"
+        },
+        {
+            "type": "java",
+            "name": "HeapSort",
+            "request": "launch",
+            "mainClass": "JVA.排序.HeapSort",
+            "projectName": "interview_952f5f04"
+        },
+        {
+            "type": "java",
+            "name": "QuickSort",
+            "request": "launch",
+            "mainClass": "JVA.排序.QuickSort",
+            "projectName": "interview_952f5f04"
+        },
+        {
+            "type": "java",
+            "name": "DequeTest",
+            "request": "launch",
+            "mainClass": "JVA.集合.DequeTest",
+            "projectName": "interview_952f5f04"
+        }
+    ]
+}
