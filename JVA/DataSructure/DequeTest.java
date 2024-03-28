@@ -1,4 +1,4 @@
-package JVA.集合;
+package JVA.DataSructure;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

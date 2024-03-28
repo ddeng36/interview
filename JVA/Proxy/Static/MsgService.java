@@ -1,4 +1,4 @@
-package JVA.代理.静态代理;
+package JVA.Proxy.Static;
 
 public interface MsgService {
     String send(String message);
