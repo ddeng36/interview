@@ -6,6 +6,83 @@
     "configurations": [
         {
             "type": "java",
+            "name": "HeapSort",
+            "request": "launch",
+            "mainClass": "JVA.Sort.HeapSort",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "Synchron",
+            "request": "launch",
+            "mainClass": "JVA.多线程.Synchron",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "Synchron",
+            "request": "launch",
+            "mainClass": "JVA.Sync.Synchron",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "JVA.Proxy.Dynamic.JDK.Main",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "JVA.Proxy.Static.Main",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "DequeTest",
+            "request": "launch",
+            "mainClass": "JVA.DataSructure.DequeTest",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "JVA.代理.静态代理.Main",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "SkipList",
+            "request": "launch",
+            "mainClass": "JVA.DataSructure.SkipList",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "DequeTest",
+            "request": "launch",
+            "mainClass": "JVA.a.DequeTest",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "DequeTest",
+            "request": "launch",
+            "mainClass": "JVA.集合.DequeTest",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
+            "name": "QuickSort",
+            "request": "launch",
+            "mainClass": "JVA.排序.QuickSort",
+            "projectName": "interview_cd2e9f9a"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
