@@ -10,7 +10,8 @@ func main() {
 	// variablesType()
 	// constant()
 	// forLoop()
-	ifElse()
+	// ifElse()
+	switchCase()
 }
 
 func hello() {
@@ -83,3 +84,22 @@ func forLoop() {
 	}
 }
 
+func ifElse() {
+	if num := 9; num < 0 {
+		fmt.Println(num, "is negative")
+	} else {
+		fmt.Println(num, "is positive")
+	}
+}
+
+func switchCase() {
+	i := 2
+	switch i {
+	case 1:
+		fmt.Println("one")
+	case 2:
+		fmt.Println("two")
+	case 3:
+		fmt.Println("three")
+	}
+}
