@@ -9,6 +9,7 @@ func f(from string) {
 		time.Sleep(100 * time.Millisecond)
 		fmt.Println(from, ":", i)
 	}
+	
 }
 func routines() {
 	go f("goroutine")
